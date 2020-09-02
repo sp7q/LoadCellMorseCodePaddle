@@ -22,7 +22,7 @@ https://morsecode.world/international/timing.html
 
 100WPM - 1dot = 12ms
 
-AD requerements : 
+AD requirements : 
 Refering to Nyquist–Shannon law https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem sampling rate should be at least 167 SPS
 
 
