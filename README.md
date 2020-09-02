@@ -5,7 +5,7 @@ This is a concept of using load cell as Morse Code paddle
 Advantages :
 - easy mechanical apply
 - no moving parts
-- fast and qiet
+- fast and quiet
 - cheap - Trinket + laod cells + AD ~25$
 - auto calibration - no readjustment needed
 
