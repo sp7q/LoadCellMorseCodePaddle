@@ -25,10 +25,13 @@ https://morsecode.world/international/timing.html
 AD requerements : 
 Refering to Nyquist–Shannon law https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem sampling rate should be at least 167 SPS
 
+
 Load cell gives differential voltage: ~0-1.5mV
 
+
 ADS1115 - 16bit, 860SPS, lowest range 256mV, Comparator
-860SPS - OK
-16bit - OK
-256mV - bit too low (do You know some AD with gain >16 adn built in comparator)
-Comparator - as a requierement !
+
+-860SPS - OK
+-16bit - OK
+-256mV - bit too low (do You know some AD with gain >16 adn built in comparator)
+-Comparator - as a requierement !
