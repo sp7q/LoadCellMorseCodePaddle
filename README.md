@@ -33,8 +33,13 @@ ADS1115 - 16bit(12bit ADS1015), 860SPS, lowest range 256mV, Comparator, differen
 - 860SPS - OK
 - 16bit - OK - 0.0039mV/bit (ADS1015 - 0.0625mV/bit - too small resolution vs 0-1.5mV range)
 - 256mV - bit too low (do You know some AD with gain >16 and built in comparator - then smaller resolution is requiered)
-- Comparator - as a requierement !
+- Comparator - as a requierement ! - comparator output drives executive transistor directly
 - Differential mesurement - requre for 4 wire load cell
 
 
-
+TODO : 
+- AD1115_wa lib cleaning
+- other A/D ?
+- i2c connection autodiagnose work on Arduino Nano but not on Trinket
+- Fully printed housing + paddles will be nice addon (OpenSCAD)
+- E/V/HST test
