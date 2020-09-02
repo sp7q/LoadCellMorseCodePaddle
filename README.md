@@ -29,8 +29,12 @@ Refering to Nyquist–Shannon law https://en.wikipedia.org/wiki/Nyquist%E2%80%93
 Load cell gives differential voltage: ~0-1.5mV
 
 
-ADS1115 - 16bit, 860SPS, lowest range 256mV, Comparator
+ADS1115 - 16bit(12bit ADS1015), 860SPS, lowest range 256mV, Comparator, differential mesurement
 - 860SPS - OK
-- 16bit - OK
-- 256mV - bit too low (do You know some AD with gain >16 adn built in comparator)
+- 16bit - OK - 0.0039mV/bit (ADS1015 - 0.0625mV/bit - too small resolution vs 0-1.5mV range)
+- 256mV - bit too low (do You know some AD with gain >16 and built in comparator - then smaller resolution is requiered)
 - Comparator - as a requierement !
+- Differential mesurement - requre for 4 wire load cell
+
+
+
