@@ -72,13 +72,13 @@ $EndComp
 $Comp
 L Connector:Audio-Jack-3 J3
 U 1 1 5F2E40A7
-P 6500 2350
-F 0 "J3" V 6430 2537 50  0000 L CNN
-F 1 "Audio-Jack-3" V 6521 2537 50  0000 L CNN
-F 2 "Connector_Audio:Jack_3.5mm_1503_Horizontal" H 6750 2450 50  0001 C CNN
-F 3 "~" H 6750 2450 50  0001 C CNN
-	1    6500 2350
-	0    1    1    0   
+P 6600 2750
+F 0 "J3" V 6530 2937 50  0000 L CNN
+F 1 "Audio-Jack-3" V 6621 2937 50  0000 L CNN
+F 2 "Connector_Audio:Jack_3.5mm_1503_Horizontal" H 6850 2850 50  0001 C CNN
+F 3 "~" H 6850 2850 50  0001 C CNN
+	1    6600 2750
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	8600 3900 8300 3900
@@ -129,13 +129,13 @@ $EndComp
 $Comp
 L power:GND #PWR0106
 U 1 1 5F2E51A1
-P 6400 2150
-F 0 "#PWR0106" H 6400 1900 50  0001 C CNN
-F 1 "GND" H 6405 1977 50  0000 C CNN
-F 2 "" H 6400 2150 50  0001 C CNN
-F 3 "" H 6400 2150 50  0001 C CNN
-	1    6400 2150
-	0    1    1    0   
+P 6700 2950
+F 0 "#PWR0106" H 6700 2700 50  0001 C CNN
+F 1 "GND" H 6705 2777 50  0000 C CNN
+F 2 "" H 6700 2950 50  0001 C CNN
+F 3 "" H 6700 2950 50  0001 C CNN
+	1    6700 2950
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	8600 3800 8200 3800
@@ -562,9 +562,9 @@ Wire Wire Line
 Wire Wire Line
 	5000 3500 8600 3500
 Wire Wire Line
-	5900 3200 5900 3950
+	5900 3200 5900 3900
 Wire Wire Line
-	7150 3950 7150 3200
+	7150 3950 7150 3900
 $Comp
 L Connector:Conn_01x04 J6
 U 1 1 5F3460B5
@@ -596,4 +596,44 @@ Wire Wire Line
 	8600 4050 8600 3900
 Wire Wire Line
 	3500 3950 3500 4300
+$Comp
+L Device:R R3
+U 1 1 5F50C80D
+P 6700 4050
+F 0 "R3" H 6770 4096 50  0000 L CNN
+F 1 "10k" H 6770 4005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6630 4050 50  0001 C CNN
+F 3 "" H 6700 4050 50  0001 C CNN
+	1    6700 4050
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5F513104
+P 5450 4050
+F 0 "R1" H 5520 4096 50  0000 L CNN
+F 1 "10k" H 5520 4005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5380 4050 50  0001 C CNN
+F 3 "" H 5450 4050 50  0001 C CNN
+	1    5450 4050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5450 3900 5900 3900
+Connection ~ 5900 3900
+Wire Wire Line
+	5900 3900 5900 3950
+Wire Wire Line
+	6700 3900 7150 3900
+Connection ~ 7150 3900
+Wire Wire Line
+	7150 3900 7150 3200
+Wire Wire Line
+	6850 4350 6700 4350
+Wire Wire Line
+	6700 4350 6700 4200
+Wire Wire Line
+	5600 4350 5450 4350
+Wire Wire Line
+	5450 4350 5450 4200
 $EndSCHEMATC
