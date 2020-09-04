@@ -27,7 +27,6 @@ int time1;  //time for setup mode purpose
 int time2;  //time for setup mode purpose
 
 void setup() {
-
   pinMode(led, OUTPUT); 
   Wire.begin();
 
@@ -86,8 +85,21 @@ void loop() {
 
 void main_loop() {
   //snore lib for ATTINY85 - uC to sleep mode
-snore(10000);
-
+  snore(10000);
+  while (readVcc() < 3000){
+    adc.setAlertModeAndLimit_V(ADS1115_MAX_LIMIT, 2000, 1900);
+    adc2.setAlertModeAndLimit_V(ADS1115_MAX_LIMIT, 2000, 1900);
+    digitalWrite(led, HIGH);
+    delay(100);
+    digitalWrite(led, LOW);
+    delay(100);    
+  }
+  if (readVcc() < 3100){
+    digitalWrite(led, HIGH);
+  }
+  else{
+    digitalWrite(led, LOW);
+  } 
 }
 
   
@@ -206,3 +218,30 @@ void blink(int amount){
       }
     
   }
+
+long readVcc() {
+  // Read 1.1V reference against AVcc
+  // set the reference to Vcc and the measurement to the internal 1.1V reference
+  //https://provideyourown.com/2012/secret-arduino-voltmeter-measure-battery-voltage/
+  #if defined(__AVR_ATmega32U4__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
+    ADMUX = _BV(REFS0) | _BV(MUX4) | _BV(MUX3) | _BV(MUX2) | _BV(MUX1);
+  #elif defined (__AVR_ATtiny24__) || defined(__AVR_ATtiny44__) || defined(__AVR_ATtiny84__)
+    ADMUX = _BV(MUX5) | _BV(MUX0);
+  #elif defined (__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__)
+    ADMUX = _BV(MUX3) | _BV(MUX2);
+  #else
+    ADMUX = _BV(REFS0) | _BV(MUX3) | _BV(MUX2) | _BV(MUX1);
+  #endif  
+
+  delay(2); // Wait for Vref to settle
+  ADCSRA |= _BV(ADSC); // Start conversion
+  while (bit_is_set(ADCSRA,ADSC)); // measuring
+
+  uint8_t low  = ADCL; // must read ADCL first - it then locks ADCH  
+  uint8_t high = ADCH; // unlocks both
+
+  long result = (high<<8) | low;
+
+  result = 1125300L / result; // Calculate Vcc (in mV); 1125300 = 1.1*1023*1000
+  return result; // Vcc in millivolts
+}  
