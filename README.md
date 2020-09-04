@@ -37,11 +37,11 @@ ADS1115 - 16bit(12bit ADS1015), 860SPS, lowest range 256mV, Comparator, differen
 - Differential mesurement - requre for 4 wire load cell
 
 Battery alert
-  -battery should never drop below 3.0V
-  -there is ~0.3V drop on diode+regulator (ATTINY85 should work properly till 2.7)
-  -Vcc measure using internal 1.1 reference
-  -3.1 - drop = 2.8 = alert 
-  -3.0 - drop = alert + lock paddle 
+  - battery should never drop below 3.0V
+  - there is ~0.3V drop on diode+regulator (ATTINY85 should work properly till 2.7)
+  - Vcc measure using internal 1.1 reference
+  - 3.1 - drop = 2.8 = alert 
+  - 3.0 - drop = alert + lock paddle 
 
 TODO : 
 - AD1115_wa lib cleaning
