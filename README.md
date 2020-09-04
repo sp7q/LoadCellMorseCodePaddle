@@ -44,3 +44,4 @@ TODO :
 - Fully printed housing + paddles will be nice addon (OpenSCAD)
 - E/V/HST test
 - issue with charging circuit
+- battery alert below 3.3V
