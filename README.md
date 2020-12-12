@@ -48,6 +48,7 @@ TODO :
 - other A/D ?
 - i2c connection autodiagnose work on Arduino Nano but not on Trinket
 - Fully printed housing + paddles will be nice addon (OpenSCAD)
-- E/V/HST test
+- E/V/HST test - passed HST by SP7VV
 - issue with charging circuit
+- after some time of use in setup mode paddle start working in reverse mode, need to be pulled instead of pushed
 
