@@ -50,5 +50,7 @@ TODO :
 - Fully printed housing + paddles will be nice addon (OpenSCAD)
 - E/V/HST test - passed HST by SP7VV
 - issue with charging circuit
-- after some time of use in setup mode paddle start working in reverse mode, need to be pulled instead of pushed
+- after some time of use in setup mode paddle start working in reverse mode, need to be pulled instead of pushed - partially done:
+      -poor chineese load cell change their "zero" point in time, also beacuse of that new approach with autocalibration is done
+      -setup part should done with same approach as well TBD
 
