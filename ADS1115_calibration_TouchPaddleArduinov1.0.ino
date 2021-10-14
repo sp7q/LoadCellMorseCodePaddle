@@ -1,6 +1,6 @@
 //ADS1115 - with calibration
 // different approach - because battery is discharging and power supply vary in time calibration should be done on power up.
-//correct setup part
+//to do - correct setup part
 #include <tinysnore.h> //lib for ATTINY85
 #include<ADS1115_WE.h> //lib was edited to give raw data instead of mV
 #include<Wire.h>
